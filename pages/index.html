@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMG - Computer Skills Training Center Philippines</title>
+    <meta name="description" content="Professional computer skills training in the Philippines. Get certified in MS Office, Adobe Photoshop, Robotics & Gaming. 10-day weekend courses available." />
+    <meta property="og:title" content="CMG - Computer Skills Training Center Philippines" />
+    <meta property="og:description" content="Transform your career with certified computer skills training. Level 1 & 2 courses available weekends only." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop" />
+    <meta property="og:url" content="/cmg-computer-training" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fstartuppr5449back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background">
+<!-- Navigation Header -->
+<header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border-color z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <svg class="w-8 h-8 text-accent" viewBox="0 0 32 32" fill="currentColor">
+                <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-13-5z"/>
+                <path d="M12 16l2 2 6-6" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="text-headline text-xl text-primary">CMG Training Center</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="#programs" class="text-body text-text-secondary hover:text-accent transition-colors" data-en="Programs" data-fil="Mga Kurso">Programs</a>
+            <a href="#schedule" class="text-body text-text-secondary hover:text-accent transition-colors" data-en="Schedule" data-fil="Iskedyul">Schedule</a>
+            <a href="#testimonials" class="text-body text-text-secondary hover:text-accent transition-colors" data-en="Reviews" data-fil="Mga Review">Reviews</a>
+            <a href="#contact" class="text-body text-text-secondary hover:text-accent transition-colors" data-en="Contact" data-fil="Makipag-ugnayan">Contact</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="language-toggle flex items-center bg-surface rounded-lg p-1">
+                <button onclick="switchLanguage('en')" id="lang-en" class="px-3 py-1 text-sm rounded transition-all bg-accent text-white">EN</button>
+                <button onclick="switchLanguage('fil')" id="lang-fil" class="px-3 py-1 text-sm rounded transition-all text-text-secondary hover:bg-accent hover:text-white">FIL</button>
+            </div>
+            <button class="btn-primary text-sm" onclick="scrollToEnroll()" data-en="Enroll Now" data-fil="Mag-enroll Ngayon">Enroll Now</button>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/10"></div>
+    <div class="absolute inset-0 opacity-20">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop" alt="Computer training background" class="w-full h-full object-cover" onerror="this.src='https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=2940'; this.onerror=null;" />
+    </div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div class="mb-8">
+            <div class="inline-flex items-center bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-accent mb-6">
+                <span class="w-2 h-2 bg-success rounded-full mr-2 animate-pulse"></span>
+                <span data-en="Licensed & Certified Training Center" data-fil="Lisensyadong Training Center">Licensed & Certified Training Center</span>
+            </div>
+            <h1 class="text-headline text-5xl md:text-7xl text-primary mb-6 leading-tight">
+                <span data-en="Master Computer Skills" data-fil="Mag-master ng Computer Skills">Master Computer Skills</span><br />
+                <span class="text-accent" data-en="Get Certified" data-fil="Makakuha ng Certificate">Get Certified</span><br />
+                <span class="text-secondary" data-en="Land Your Dream Job" data-fil="Makuha ang Pangarap na Trabaho">Land Your Dream Job</span>
+            </h1>
+            <p class="text-body-medium text-xl text-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed" data-en="Join thousands of Filipino professionals who transformed their careers with our certified computer training. No college degree required - just your certificate!" data-fil="Sumama sa libu-libong Pilipino na nag-transform ng kanilang career sa pamamagitan ng aming certified computer training. Hindi kailangan ng college degree - certificate lang!">
+                Join thousands of Filipino professionals who transformed their careers with our certified computer training. No college degree required - just your certificate!
+            </p>
+        </div>
+
+        <!-- Enrollment Form -->
+        <div class="email-signup-form max-w-lg mx-auto mb-8">
+            <form class="flex flex-col sm:flex-row gap-3 p-2" onsubmit="handleEnrollment(event)">
+                <input type="email" placeholder="Enter your email to enroll" class="form-input flex-1 text-center sm:text-left min-w-0" required data-en-placeholder="Enter your email to enroll" data-fil-placeholder="Ilagay ang email para mag-enroll" />
+                <button type="submit" class="btn-primary whitespace-nowrap px-4 py-3 flex-shrink-0" data-en="Start Training" data-fil="Simulan ang Training">
+                    Start Training
+                </button>
+            </form>
+            <p class="text-sm text-text-secondary mt-3">
+                <span class="inline-flex items-center">
+                    <svg class="w-4 h-4 text-success mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span data-en="Weekend classes available • Certificate guaranteed" data-fil="May weekend classes • Guaranteed ang certificate">Weekend classes available • Certificate guaranteed</span>
+                </span>
+            </p>
+        </div>
+
+        <!-- Success Stats -->
+        <div class="flex items-center justify-center space-x-8 text-sm text-text-secondary">
+            <div class="flex items-center">
+                <span class="text-2xl font-headline text-accent mr-2" id="student-counter">2,847</span>
+                <span data-en="graduates employed" data-fil="graduate na may trabaho">graduates employed</span>
+            </div>
+            <div class="flex items-center">
+                <span class="text-2xl font-headline text-success mr-2">95%</span>
+                <span data-en="job placement rate" data-fil="job placement rate">job placement rate</span>
+            </div>
+        </div>
+
+        <!-- Accreditation -->
+        <div class="mt-12">
+            <p class="text-sm text-text-secondary mb-6" data-en="Accredited By" data-fil="Accredited ng">Accredited By</p>
+            <div class="flex items-center justify-center space-x-8 opacity-60">
+                <div class="bg-white/80 px-4 py-2 rounded text-primary font-semibold">TESDA</div>
+                <div class="bg-white/80 px-4 py-2 rounded text-primary font-semibold">DTI</div>
+                <div class="bg-white/80 px-4 py-2 rounded text-primary font-semibold">DepEd</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Training Programs Section -->
+<section id="programs" class="py-20 bg-surface">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-headline text-4xl md:text-5xl text-primary mb-6" data-en="Training Programs" data-fil="Mga Training Program">
+                Training Programs
+            </h2>
+            <p class="text-body-medium text-xl text-text-secondary max-w-3xl mx-auto" data-en="Choose from our comprehensive computer skills training programs designed for Filipino professionals" data-fil="Pumili sa aming komprehensibong computer skills training programs na ginawa para sa mga Pilipinong propesyonal">
+                Choose from our comprehensive computer skills training programs designed for Filipino professionals
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="bg-white rounded-lg p-6 border-l-4 border-accent">
+                    <h3 class="text-subheadline text-xl text-primary mb-3" data-en="Level 1 - Essential Skills" data-fil="Level 1 - Essential Skills">Level 1 - Essential Skills</h3>
+                    <ul class="space-y-3 text-text-secondary">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-en="Microsoft Word - Document creation and formatting" data-fil="Microsoft Word - Paggawa at pag-format ng dokumento">Microsoft Word - Document creation and formatting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-en="Microsoft Excel - Spreadsheets and data analysis" data-fil="Microsoft Excel - Spreadsheet at data analysis">Microsoft Excel - Spreadsheets and data analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-en="Microsoft PowerPoint - Professional presentations" data-fil="Microsoft PowerPoint - Professional presentations">Microsoft PowerPoint - Professional presentations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-en="Adobe Photoshop - Image editing and design" data-fil="Adobe Photoshop - Pag-edit ng larawan at design">Adobe Photoshop - Image editing and design</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-en="Basic Robotics - Introduction to programming" data-fil="Basic Robotics - Introduction sa programming">Basic Robotics - Introduction to programming</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 border-l-4 border-success">
+                    <h3 class="text-subheadline text-xl text-primary mb-3" data-en="Advanced Level 2" data-fil="Advanced Level 2">Advanced Level 2</h3>
+                    <ul class="space-y-3 text-text-secondary">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-success mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-en="Multimedia Production - Video and audio editing" data-fil="Multimedia Production - Video at audio editing">Multimedia Production - Video and audio editing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-success mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-en="Video Gaming Development - Kodu programming" data-fil="Video Gaming Development - Kodu programming">Video Gaming Development - Kodu programming</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-success mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-en="Advanced Design Techniques" data-fil="Advanced Design Techniques">Advanced Design Techniques</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2940&auto=format&fit=crop" alt="CMG Training Center classroom" class="w-full rounded-lg shadow-custom-lg" onerror="this.src='https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=2940'; this.onerror=null;" />
+                <div class="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent rounded-lg"></div>
+                <div class="absolute bottom-4 left-4 bg-white/90 rounded-lg p-3">
+                    <p class="text-sm font-semibold text-primary" data-en="State-of-the-art Learning Center" data-fil="Modernong Learning Center">State-of-the-art Learning Center</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Schedule & Benefits Section -->
+<section id="schedule" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-headline text-4xl md:text-5xl text-primary mb-6" data-en="Flexible Weekend Schedule" data-fil="Flexible na Weekend Schedule">
+                Flexible Weekend Schedule
+            </h2>
+            <p class="text-body-medium text-xl text-text-secondary max-w-3xl mx-auto" data-en="Designed for working professionals and students with convenient weekend-only classes" data-fil="Ginawa para sa mga working professionals at estudyante na may convenient na weekend-only classes">
+                Designed for working professionals and students with convenient weekend-only classes
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white rounded-lg p-6 shadow-custom-sm hover:shadow-custom-lg transition-all duration-300 group">
+                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-subheadline text-xl text-primary mb-3" data-en="2 Hours per Day" data-fil="2 Oras kada Araw">2 Hours per Day</h3>
+                <p class="text-body text-text-secondary" data-en="Intensive but manageable daily sessions perfect for learning" data-fil="Intensive pero manageable na daily sessions na perfect para sa pag-aaral">Intensive but manageable daily sessions perfect for learning</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-custom-sm hover:shadow-custom-lg transition-all duration-300 group">
+                <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-success/20 transition-colors">
+                    <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-subheadline text-xl text-primary mb-3" data-en="10 Days Total" data-fil="10 Araw Lahat">10 Days Total</h3>
+                <p class="text-body text-text-secondary" data-en="Complete your certification in just 10 training days" data-fil="Makumpleto ang certification mo sa 10 training days lang">Complete your certification in just 10 training days</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-custom-sm hover:shadow-custom-lg transition-all duration-300 group">
+                <div class="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-warning/20 transition-colors">
+                    <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                    </svg>
+                </div>
+                <h3 class="text-subheadline text-xl text-primary mb-3" data-en="Weekend Only" data-fil="Weekend Lang">Weekend Only</h3>
+                <p class="text-body text-text-secondary" data-en="Saturday OR Sunday - choose what works best for you" data-fil="Saturday O Sunday - piliin kung ano ang best para sa'yo">Saturday OR Sunday - choose what works best for you</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-custom-sm hover:shadow-custom-lg transition-all duration-300 group">
+                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                    </svg>
+                </div>
+                <h3 class="text-subheadline text-xl text-primary mb-3" data-en="Certificate" data-fil="Certificate">Certificate</h3>
+                <p class="text-body text-text-secondary" data-en="Official completion certificate for job applications" data-fil="Official na completion certificate para sa job applications">Official completion certificate for job applications</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Learning Center Gallery Section -->
+<section id="gallery" class="py-20 bg-surface">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-headline text-4xl md:text-5xl text-primary mb-6" data-en="Our Learning Center" data-fil="Aming Learning Center">
+                Our Learning Center
+            </h2>
+            <p class="text-body-medium text-xl text-text-secondary max-w-3xl mx-auto" data-en="Modern facilities equipped with the latest technology for hands-on learning" data-fil="Modernong facilities na equipped ng latest technology para sa hands-on learning">
+                Modern facilities equipped with the latest technology for hands-on learning
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card-team text-center">
+                <div class="relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=400&auto=format&fit=crop" alt="Computer Laboratory" class="w-full h-48 rounded-lg object-cover" onerror="this.src='https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                    <div class="absolute bottom-2 left-2 bg-accent/90 text-white px-2 py-1 rounded text-sm">
+                        <span data-en="Computer Lab" data-fil="Computer Lab">Computer Lab</span>
+                    </div>
+                </div>
+                <h3 class="text-subheadline text-lg text-primary mb-2" data-en="State-of-the-Art Computers" data-fil="State-of-the-Art na Computers">State-of-the-Art Computers</h3>
+                <p class="text-body text-text-secondary" data-en="Latest desktop computers with all necessary software installed for comprehensive training" data-fil="Pinakabagong desktop computers na may lahat ng kailangang software para sa comprehensive training">Latest desktop computers with all necessary software installed for comprehensive training</p>
+            </div>
+
+            <div class="card-team text-center">
+                <div class="relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9d1?q=80&w=400&auto=format&fit=crop" alt="Classroom Setting" class="w-full h-48 rounded-lg object-cover" onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'; this.onerror=null;" />
+                    <div class="absolute bottom-2 left-2 bg-success/90 text-white px-2 py-1 rounded text-sm">
+                        <span data-en="Classroom" data-fil="Classroom">Classroom</span>
+                    </div>
+                </div>
+                <h3 class="text-subheadline text-lg text-primary mb-2" data-en="Interactive Learning Environment" data-fil="Interactive Learning Environment">Interactive Learning Environment</h3>
+                <p class="text-body text-text-secondary" data-en="Spacious classrooms designed for collaborative learning with experienced instructors" data-fil="Malawakang classrooms na ginawa para sa collaborative learning kasama ang experienced instructors">Spacious classrooms designed for collaborative learning with experienced instructors</p>
+            </div>
+
+            <div class="card-team text-center">
+                <div class="relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=400&auto=format&fit=crop" alt="Graduation Ceremony" class="w-full h-48 rounded-lg object-cover" onerror="this.src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                    <div class="absolute bottom-2 left-2 bg-warning/90 text-white px-2 py-1 rounded text-sm">
+                        <span data-en="Graduation" data-fil="Graduation">Graduation</span>
+                    </div>
+                </div>
+                <h3 class="text-subheadline text-lg text-primary mb-2" data-en="Graduation Ceremony" data-fil="Graduation Ceremony">Graduation Ceremony</h3>
+                <p class="text-body text-text-secondary" data-en="Celebrate your achievement with family and receive your official certificate" data-fil="I-celebrate ang achievement mo kasama ang family at tumanggap ng official certificate">Celebrate your achievement with family and receive your official certificate</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-headline text-4xl md:text-5xl text-primary mb-6" data-en="Success Stories" data-fil="Mga Success Stories">
+                Success Stories
+            </h2>
+            <p class="text-body-medium text-xl text-text-secondary max-w-3xl mx-auto" data-en="Hear from our graduates who transformed their careers with CMG certification" data-fil="Marinig mula sa aming graduates na nag-transform ng kanilang careers gamit ang CMG certification">
+                Hear from our graduates who transformed their careers with CMG certification
+            </p>
+        </div>
+
+        <div class="relative">
+            <!-- Testimonial Cards -->
+            <div class="space-y-12">
+                <!-- Testimonial 1 -->
+                <div class="timeline-milestone flex items-center">
+                    <div class="w-1/2 pr-8 text-right">
+                        <div class="bg-white rounded-lg p-6 shadow-custom-sm">
+                            <div class="flex items-center justify-end mb-3">
+                                <div class="flex text-accent mr-3">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="text-body text-text-secondary mb-3" data-en="&quot;After completing Level 1, I got hired as an admin assistant in Makati. The certificate from CMG made all the difference!&quot;" data-fil="&quot;Pagkatapos kong makumpleto ang Level 1, nakatanggap ako ng trabaho bilang admin assistant sa Makati. Ang certificate mula sa CMG ang naging dahilan!&quot;">
+                                "After completing Level 1, I got hired as an admin assistant in Makati. The certificate from CMG made all the difference!"
+                            </p>
+                            <div class="text-right">
+                                <h4 class="text-accent font-accent">Maria Santos</h4>
+                                <p class="text-sm text-text-secondary" data-en="Administrative Assistant, BGC" data-fil="Administrative Assistant, BGC">Administrative Assistant, BGC</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-custom-sm">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=100&auto=format&fit=crop" alt="Maria Santos" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                    <div class="w-1/2 pl-8"></div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="timeline-milestone flex items-center">
+                    <div class="w-1/2 pr-8"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-custom-sm">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Juan Dela Cruz" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                    <div class="w-1/2 pl-8">
+                        <div class="bg-white rounded-lg p-6 shadow-custom-sm">
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-accent mr-3">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="text-body text-text-secondary mb-3" data-en="&quot;Hindi ako college graduate, pero dahil sa Advanced Level 2, nakatrabaho ako sa multimedia company. Salamat CMG!&quot;" data-fil="&quot;Hindi ako college graduate, pero dahil sa Advanced Level 2, nakatrabaho ako sa multimedia company. Salamat CMG!&quot;">
+                                "Hindi ako college graduate, pero dahil sa Advanced Level 2, nakatrabaho ako sa multimedia company. Salamat CMG!"
+                            </p>
+                            <div>
+                                <h4 class="text-accent font-accent">Juan Dela Cruz</h4>
+                                <p class="text-sm text-text-secondary" data-en="Multimedia Specialist, Quezon City" data-fil="Multimedia Specialist, Quezon City">Multimedia Specialist, Quezon City</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="timeline-milestone flex items-center">
+                    <div class="w-1/2 pr-8 text-right">
+                        <div class="bg-white rounded-lg p-6 shadow-custom-sm">
+                            <div class="flex items-center justify-end mb-3">
+                                <div class="flex text-accent mr-3">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="text-body text-text-secondary mb-3" data-en="&quot;The weekend schedule was perfect for me as a single parent. Now I work from home as a freelance graphic designer!&quot;" data-fil="&quot;Ang weekend schedule ay perfect para sa akin bilang single parent. Ngayon nagwo-work from home ako bilang freelance graphic designer!&quot;">
+                                "The weekend schedule was perfect for me as a single parent. Now I work from home as a freelance graphic designer!"
+                            </p>
+                            <div class="text-right">
+                                <h4 class="text-accent font-accent">Ana Reyes</h4>
+                                <p class="text-sm text-text-secondary" data-en="Freelance Graphic Designer" data-fil="Freelance Graphic Designer">Freelance Graphic Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-custom-sm">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop" alt="Ana Reyes" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                    <div class="w-1/2 pl-8"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Enrollment Section -->
+<section class="py-20 bg-gradient-to-br from-accent/5 to-primary/5">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-custom-lg">
+            <div class="mb-8">
+                <div class="inline-flex items-center bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-accent mb-6">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                    <span data-en="Limited Slots Available" data-fil="Limited Slots Available">Limited Slots Available</span>
+                </div>
+                <h2 class="text-headline text-4xl md:text-5xl text-primary mb-6" data-en="Start Your Career Transformation" data-fil="Simulan ang Career Transformation Mo">
+                    Start Your Career Transformation
+                </h2>
+                <p class="text-body-medium text-xl text-text-secondary mb-8" data-en="Join the next batch of successful professionals. Enroll now and secure your future!" data-fil="Sumama sa susunod na batch ng successful professionals. Mag-enroll na at i-secure ang future mo!">
+                    Join the next batch of successful professionals. Enroll now and secure your future!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="text-left p-6 bg-surface rounded-lg">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-success/10 rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <svg class="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-subheadline text-lg text-primary mb-2" data-en="Affordable Payment Plans" data-fil="Affordable Payment Plans">Affordable Payment Plans</h3>
+                            <p class="text-body text-text-secondary" data-en="Flexible payment options that fit your budget" data-fil="Flexible payment options na swak sa budget mo">Flexible payment options that fit your budget</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-left p-6 bg-surface rounded-lg">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-subheadline text-lg text-primary mb-2" data-en="Job Placement Support" data-fil="Job Placement Support">Job Placement Support</h3>
+                            <p class="text-body text-text-secondary" data-en="We help connect graduates with employers" data-fil="Tinutulungan namin mag-connect ang graduates sa employers">We help connect graduates with employers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-left p-6 bg-surface rounded-lg">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-warning/10 rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <svg class="w-4 h-4 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+                                <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-subheadline text-lg text-primary mb-2" data-en="Lifetime Support" data-fil="Lifetime Support">Lifetime Support</h3>
+                            <p class="text-body text-text-secondary" data-en="Continued guidance even after graduation" data-fil="Continued guidance kahit after graduation">Continued guidance even after graduation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-left p-6 bg-surface rounded-lg">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-subheadline text-lg text-primary mb-2" data-en="Small Class Size" data-fil="Maliit na Class Size">Small Class Size</h3>
+                            <p class="text-body text-text-secondary" data-en="Personal attention for every student" data-fil="Personal attention para sa bawat estudyante">Personal attention for every student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Slots Counter -->
+            <div class="bg-accent/5 rounded-lg p-6 mb-8">
+                <div class="flex items-center justify-center space-x-8 text-center">
+                    <div>
+                        <div class="text-3xl font-headline text-accent" id="slots-available">12</div>
+                        <div class="text-sm text-text-secondary" data-en="slots available this month" data-fil="slots available ngayong buwan">slots available this month</div>
+                    </div>
+                    <div class="w-px h-12 bg-border-color"></div>
+                    <div>
+                        <div class="text-3xl font-headline text-success">95%</div>
+                        <div class="text-sm text-text-secondary" data-en="graduate employment rate" data-fil="graduate employment rate">graduate employment rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enrollment Form -->
+            <form class="max-w-md mx-auto" onsubmit="handleFinalEnrollment(event)">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Enter your email to secure slot" class="form-input flex-1" required data-en-placeholder="Enter your email to secure slot" data-fil-placeholder="Ilagay ang email para ma-secure ang slot" />
+                    <button type="submit" class="btn-primary whitespace-nowrap" data-en="Reserve My Slot" data-fil="Reserve ang Slot Ko">
+                        Reserve My Slot
+                    </button>
+                </div>
+                <p class="text-sm text-text-secondary mt-3" data-en="*No payment required to reserve. We'll contact you within 24 hours." data-fil="*Walang bayad para mag-reserve. Tatawagan ka namin within 24 hours.">
+                    *No payment required to reserve. We'll contact you within 24 hours.
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information Section -->
+<section id="contact" class="py-20 bg-surface">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-headline text-4xl md:text-5xl text-primary mb-6" data-en="Visit Our Training Center" data-fil="Bisitahin ang Aming Training Center">
+                Visit Our Training Center
+            </h2>
+            <p class="text-body-medium text-xl text-text-secondary" data-en="Come see our facilities and speak with our enrollment advisors" data-fil="Halika at tignan ang aming facilities at makausap ang aming enrollment advisors">
+                Come see our facilities and speak with our enrollment advisors
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+            <div class="space-y-8">
+                <div class="bg-white rounded-lg p-6 shadow-custom-sm">
+                    <h3 class="text-subheadline text-xl text-primary mb-4" data-en="CMG Training Center - Main Branch" data-fil="CMG Training Center - Main Branch">CMG Training Center - Main Branch</h3>
+                    <div class="space-y-3 text-text-secondary">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span>123 Technology Avenue, Quezon City, Metro Manila, Philippines</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <div>
+                                <p>(02) 8123-4567</p>
+                                <p>Globe: 0917-123-4567</p>
+                                <p>Smart: 0918-765-4321</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span>info@cmgtraining.ph</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-custom-sm">
+                    <h3 class="text-subheadline text-xl text-primary mb-4" data-en="Operating Hours" data-fil="Operating Hours">Operating Hours</h3>
+                    <div class="space-y-2 text-text-secondary">
+                        <div class="flex justify-between">
+                            <span data-en="Monday - Friday:" data-fil="Monday - Friday:">Monday - Friday:</span>
+                            <span>9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span data-en="Saturday:" data-fil="Saturday:">Saturday:</span>
+                            <span>8:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span data-en="Sunday:" data-fil="Sunday:">Sunday:</span>
+                            <span>9:00 AM - 4:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-custom-sm">
+                    <h3 class="text-subheadline text-xl text-primary mb-4" data-en="Accreditation & Certifications" data-fil="Accreditation & Certifications">Accreditation & Certifications</h3>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="p-3 bg-surface rounded">
+                            <div class="font-semibold text-primary">TESDA</div>
+                            <div class="text-xs text-text-secondary" data-en="Registered" data-fil="Registered">Registered</div>
+                        </div>
+                        <div class="p-3 bg-surface rounded">
+                            <div class="font-semibold text-primary">DTI</div>
+                            <div class="text-xs text-text-secondary" data-en="Licensed" data-fil="Licensed">Licensed</div>
+                        </div>
+                        <div class="p-3 bg-surface rounded">
+                            <div class="font-semibold text-primary">DepEd</div>
+                            <div class="text-xs text-text-secondary" data-en="Recognized" data-fil="Recognized">Recognized</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="CMG Training Center Building" class="w-full h-80 rounded-lg object-cover shadow-custom-lg" onerror="this.src='https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800'; this.onerror=null;" />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent rounded-lg"></div>
+                <div class="absolute bottom-6 left-6 right-6">
+                    <h4 class="text-white font-bold text-lg mb-2" data-en="Modern Training Facility" data-fil="Modern Training Facility">Modern Training Facility</h4>
+                    <p class="text-white/90 text-sm" data-en="Easily accessible by public transport with free parking available" data-fil="Madaling puntahan gamit ang public transport at may free parking">Easily accessible by public transport with free parking available</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="bg-primary text-white py-16">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-2 mb-6">
+                    <svg class="w-8 h-8 text-accent" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-13-5z"/>
+                        <path d="M12 16l2 2 6-6" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="text-headline text-xl">CMG Training Center</span>
+                </div>
+                <p class="text-white/80 mb-6 max-w-md" data-en="Empowering Filipino professionals with certified computer skills training. Transform your career without needing a college degree." data-fil="Nagbibigay-lakas sa mga Pilipinong propesyonal gamit ang certified computer skills training. I-transform ang career mo nang hindi kailangan ng college degree.">
+                    Empowering Filipino professionals with certified computer skills training. Transform your career without needing a college degree.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white/60 hover:text-accent transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-accent transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-accent transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-subheadline text-lg mb-6" data-en="Training Programs" data-fil="Mga Training Program">Training Programs</h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-white/80 hover:text-accent transition-colors" data-en="Level 1 - Essential Skills" data-fil="Level 1 - Essential Skills">Level 1 - Essential Skills</a></li>
+                    <li><a href="#" class="text-white/80 hover:text-accent transition-colors" data-en="Advanced Level 2" data-fil="Advanced Level 2">Advanced Level 2</a></li>
+                    <li><a href="#" class="text-white/80 hover:text-accent transition-colors" data-en="Corporate Training" data-fil="Corporate Training">Corporate Training</a></li>
+                    <li><a href="#" class="text-white/80 hover:text-accent transition-colors" data-en="Online Classes" data-fil="Online Classes">Online Classes</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-subheadline text-lg mb-6" data-en="Quick Links" data-fil="Mga Quick Links">Quick Links</h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-white/80 hover:text-accent transition-colors" data-en="About CMG" data-fil="Tungkol sa CMG">About CMG</a></li>
+                    <li><a href="#" class="text-white/80 hover:text-accent transition-colors" data-en="Enrollment" data-fil="Pag-enroll">Enrollment</a></li>
+                    <li><a href="#" class="text-white/80 hover:text-accent transition-colors" data-en="Job Placement" data-fil="Job Placement">Job Placement</a></li>
+                    <li><a href="#" class="text-white/80 hover:text-accent transition-colors" data-en="Alumni Network" data-fil="Alumni Network">Alumni Network</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row items-center justify-between">
+            <p class="text-white/60 text-sm" data-en="© 2025 CMG Training Center. All rights reserved." data-fil="© 2025 CMG Training Center. Lahat ng karapatan ay nakataan.">
+                © 2025 CMG Training Center. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-6 mt-4 md:mt-0">
+                <div class="flex items-center text-white/60 text-sm">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span data-en="TESDA Registered" data-fil="TESDA Registered">TESDA Registered</span>
+                </div>
+                <div class="flex items-center text-white/60 text-sm">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span data-en="DTI Licensed" data-fil="DTI Licensed">DTI Licensed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript -->
+    <script>
+    // Language switching functionality
+    let currentLanguage = 'en';
+
+    function switchLanguage(lang) {
+        currentLanguage = lang;
+        
+        // Update button states
+        document.getElementById('lang-en').classList.toggle('bg-accent', lang === 'en');
+        document.getElementById('lang-en').classList.toggle('text-white', lang === 'en');
+        document.getElementById('lang-en').classList.toggle('text-text-secondary', lang !== 'en');
+        
+        document.getElementById('lang-fil').classList.toggle('bg-accent', lang === 'fil');
+        document.getElementById('lang-fil').classList.toggle('text-white', lang === 'fil');
+        document.getElementById('lang-fil').classList.toggle('text-text-secondary', lang !== 'fil');
+        
+        // Update all text elements
+        document.querySelectorAll('[data-en][data-fil]').forEach(element => {
+            if (lang === 'en') {
+                element.textContent = element.getAttribute('data-en');
+            } else {
+                element.textContent = element.getAttribute('data-fil');
+            }
+        });
+        
+        // Update placeholder texts
+        document.querySelectorAll('input[data-en-placeholder][data-fil-placeholder]').forEach(input => {
+            if (lang === 'en') {
+                input.placeholder = input.getAttribute('data-en-placeholder');
+            } else {
+                input.placeholder = input.getAttribute('data-fil-placeholder');
+            }
+        });
+    }
+
+    // Smooth scrolling for enrollment
+    function scrollToEnroll() {
+        document.querySelector('#hero .email-signup-form').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    }
+
+    // Handle enrollment form submission
+    function handleEnrollment(event) {
+        event.preventDefault();
+        const email = event.target.querySelector('input[type="email"]').value;
+        
+        let message = currentLanguage === 'en' 
+            ? `Thank you! We've received your enrollment request for ${email}. Our team will contact you within 24 hours to discuss your training options.`
+            : `Salamat! Natanggap namin ang enrollment request mo para sa ${email}. Tatawagan ka namin ng team namin within 24 hours para pag-usapan ang training options mo.`;
+        
+        alert(message);
+        
+        // Update counter
+        const counter = document.getElementById('student-counter');
+        const currentCount = parseInt(counter.textContent.replace(',', ''));
+        counter.textContent = (currentCount + 1).toLocaleString();
+        
+        // Reset form
+        event.target.reset();
+    }
+
+    // Handle final enrollment form submission
+    function handleFinalEnrollment(event) {
+        event.preventDefault();
+        const email = event.target.querySelector('input[type="email"]').value;
+        
+        let message = currentLanguage === 'en' 
+            ? `Congratulations! Your slot has been reserved for ${email}. We'll call you within 24 hours to complete your enrollment and discuss payment options.`
+            : `Congratulations! Na-reserve na ang slot mo para sa ${email}. Tatawagan ka namin within 24 hours para makumpleto ang enrollment at pag-usapan ang payment options.`;
+        
+        alert(message);
+        
+        // Update available slots
+        const slotsAvailable = document.getElementById('slots-available');
+        const currentSlots = parseInt(slotsAvailable.textContent);
+        if (currentSlots > 0) {
+            slotsAvailable.textContent = currentSlots - 1;
+        }
+        
+        // Reset form
+        event.target.reset();
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add scroll effect to header
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.classList.add('bg-white/98');
+        } else {
+            header.classList.remove('bg-white/98');
+        }
+    });
+
+    // Auto-update available slots to create urgency
+    setInterval(() => {
+        const slotsElement = document.getElementById('slots-available');
+        const currentSlots = parseInt(slotsElement.textContent);
+        if (currentSlots > 5 && Math.random() > 0.7) {
+            slotsElement.textContent = currentSlots - 1;
+        }
+    }, 30000); // Check every 30 seconds
+
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        switchLanguage('en'); // Set default language
+    });
+</script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
