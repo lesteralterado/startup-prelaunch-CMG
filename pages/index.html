@@ -20,10 +20,7 @@
 <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border-color z-50">
     <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div class="flex items-center space-x-2">
-            <svg class="w-8 h-8 text-accent" viewBox="0 0 32 32" fill="currentColor">
-                <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-13-5z"/>
-                <path d="M12 16l2 2 6-6" stroke="white" stroke-width="2" fill="none"/>
-            </svg>
+            <img src="../cmg-logo-bgtransparent.png" class="w-12 h-12 "/>
             <span class="text-headline text-xl text-primary">CMG Training Center</span>
         </div>
         <div class="hidden md:flex items-center space-x-8">
@@ -37,7 +34,7 @@
                 <button onclick="switchLanguage('en')" id="lang-en" class="px-3 py-1 text-sm rounded transition-all bg-accent text-white">EN</button>
                 <button onclick="switchLanguage('fil')" id="lang-fil" class="px-3 py-1 text-sm rounded transition-all text-text-secondary hover:bg-accent hover:text-white">FIL</button>
             </div>
-            <button class="btn-primary text-sm" onclick="scrollToEnroll()" data-en="Enroll Now" data-fil="Mag-enroll Ngayon">Enroll Now</button>
+            <!-- <button class="btn-primary text-sm" onclick="scrollToEnroll()" data-en="Enroll Now" data-fil="Mag-enroll Ngayon">Enroll Now</button> -->
         </div>
     </nav>
 </header>
@@ -840,6 +837,6 @@
         switchLanguage('en'); // Set default language
     });
 </script>
-<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+<script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
 </body>
 </html>
