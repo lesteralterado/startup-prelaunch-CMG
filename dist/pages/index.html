@@ -9,14 +9,32 @@
     <meta property="og:description" content="Transform your career with certified computer skills training. Level 1 & 2 courses available weekends only." />
     <meta property="og:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop" />
     <meta property="og:url" content="/cmg-computer-training" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fstartuppr5449back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
   <script type="module" crossorigin src="/assets/main-B5Qt9EMX.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/style-CM5xei_e.css">
+  <link rel="stylesheet" crossorigin href="/assets/style-D4WUwe3m.css">
 </head>
 <body class="bg-background">
+<!-- Preloader Overlay -->
+<div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center transition-transform duration-1000 ease-in-out">
+    <div class="text-center">
+        <h1 
+            class="font-poppins text-4xl md:text-6xl font-bold"
+            style="
+                background: linear-gradient(135deg, #1a365d 0%, #3182ce 50%, #f6ad55 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(245, 158, 11, 0.3);
+            "
+        >
+            CMG Training Center
+        </h1>
+    </div>
+</div>
+
 <!-- Navigation Header -->
 <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border-color z-50">
     <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -35,7 +53,7 @@
                 <button onclick="switchLanguage('en')" id="lang-en" class="px-3 py-1 text-sm rounded transition-all bg-accent text-white">EN</button>
                 <button onclick="switchLanguage('fil')" id="lang-fil" class="px-3 py-1 text-sm rounded transition-all text-text-secondary hover:bg-accent hover:text-white">FIL</button>
             </div>
-            <button class="btn-primary text-sm" onclick="scrollToEnroll()" data-en="Enroll Now" data-fil="Mag-enroll Ngayon">Enroll Now</button>
+            <!-- <button class="btn-primary text-sm" onclick="scrollToEnroll()" data-en="Enroll Now" data-fil="Mag-enroll Ngayon">Enroll Now</button> -->
         </div>
     </nav>
 </header>
@@ -839,5 +857,28 @@
     });
 </script>
 <script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
+
+<!-- Preloader Animation Script -->
+<script>
+    (function() {
+        const preloader = document.getElementById('preloader');
+        
+        // Function to hide preloader with animation after 2 seconds
+        function hidePreloader() {
+            if (preloader) {
+                preloader.style.transform = 'translateY(-100%)';
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 1000);
+            }
+        }
+        
+        // Trigger entrance animation and slide up after 2 seconds
+        window.addEventListener('load', function() {
+            // Wait 2 seconds before sliding up
+            setTimeout(hidePreloader, 2000);
+        });
+    })();
+</script>
 </body>
 </html>

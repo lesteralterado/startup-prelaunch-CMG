@@ -1632,3 +1632,27 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* Preloader Overlay Styles */
+#preloader {
+  background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+}
+
+/* Logo bounce animation */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* Smooth scrolling for the page */
+html {
+  scroll-behavior: smooth;
+}
