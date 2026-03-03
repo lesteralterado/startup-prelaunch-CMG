@@ -1635,7 +1635,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Preloader Overlay Styles */
 #preloader {
-  background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+  background: #e5e7eb;
 }
 
 /* Logo bounce animation */
