@@ -17,11 +17,11 @@
 </head>
 <body class="bg-background">
 <!-- Preloader Overlay -->
-<div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center transition-transform duration-1000 ease-in-out">
-    <div class="text-center flex items-center space-x-2">
-        <img src="../cmg-logo-bgtransparent.png" class="w-12 h-12 "/>
+<div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-primary">
+    <div class="text-center flex items-center space-x-2 preloader-content" id="preloader-content">
+        <img src="../public/cmg-logo-bgtransparent.png" class="w-12 h-12"/>
         <h1 
-            class="font-poppins text-4xl text-primary md:text-6xl font-bold"
+            class="font-poppins text-4xl text-white md:text-6xl font-bold"
         >
             CMG Training Center
         </h1>
@@ -855,20 +855,25 @@
 <script>
     (function() {
         const preloader = document.getElementById('preloader');
+        const preloaderContent = document.getElementById('preloader-content');
         
-        // Function to hide preloader with animation after 2 seconds
+        // Function to hide preloader with scale + slide animation
         function hidePreloader() {
-            if (preloader) {
-                preloader.style.transform = 'translateY(-100%)';
+            if (preloaderContent) {
+                // Add exit animation class for scale + slide effect
+                preloaderContent.classList.remove('preloader-content');
+                preloaderContent.classList.add('preloader-exit');
+                
+                // After animation completes, hide the preloader
                 setTimeout(function() {
                     preloader.style.display = 'none';
-                }, 1000);
+                }, 500);
             }
         }
         
-        // Trigger entrance animation and slide up after 2 seconds
+        // Trigger animation after page loads
         window.addEventListener('load', function() {
-            // Wait 2 seconds before sliding up
+            // Wait 2 seconds then trigger scale + slide animation
             setTimeout(hidePreloader, 2000);
         });
     })();

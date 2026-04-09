@@ -1639,17 +1639,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Logo bounce animation */
-@keyframes bounce-slow {
+/* @keyframes bounce-slow {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(-10px);
   }
+} */
+
+/* .animate-bounce {
+  animation: bounce-slow 2s ease-in-out infinite;
+} */
+
+/* Scale Animation Preloader */
+/* @keyframes scale-in {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+} */
+
+/* @keyframes scale-out {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) translateY(-100%);
+    opacity: 0;
+  }
+} */
+
+.preloader-content {
+  animation: scale-in 1.5s ease-in-out forwards;
 }
 
-.animate-bounce {
-  animation: bounce-slow 2s ease-in-out infinite;
+.preloader-exit {
+  animation: scale-out 0.5s ease-in-out forwards;
 }
 
 /* Smooth scrolling for the page */
